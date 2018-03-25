@@ -4,7 +4,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from coinhub import views
 
 
 urlpatterns = [
@@ -17,7 +16,6 @@ urlpatterns = [
     # User management
     url(r'^users/', include('coinhub.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^data/$', views.Data, name='data'),
 
     # Your stuff: custom urls includes go here
 
