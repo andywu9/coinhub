@@ -56,6 +56,7 @@ LOCAL_APPS = [
     # custom users app
     'coinhub.users.apps.UsersConfig',
     # Your stuff: custom apps go here
+    'coinhub'
 ]
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -111,7 +112,12 @@ MANAGERS = ADMINS
 # Uses django-environ to accept uri format
 # See: https://django-environ.readthedocs.io/en/latest/#supported-types
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='postgres:///coinhub'),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "ch",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
