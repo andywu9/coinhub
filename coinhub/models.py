@@ -22,6 +22,14 @@ class CurrentCoinInfo(models.Model):
     symbol = models.CharField(max_length=6, default="")
     volume = models.DecimalField(max_digits=19, decimal_places=2, default=0)
 
+# Hold the best price for each currency and the exchange it occured at
+class ExchangeInfo(models.Model):
+    buy_ex = models.CharField(max_length=30, default="")
+    buy_price = models.DecimalField(max_digits=19, decimal_places=10, default=0)
+    name = models.CharField(primary_key=True, max_length=30, default="")
+    sell_ex = models.CharField(max_length=30, default="")
+    sell_price = models.DecimalField(max_digits=19, decimal_places=10, default=0)
+
 
 # Hold the historical data that is shown as a small graph on main page
 class GraphData(models.Model):

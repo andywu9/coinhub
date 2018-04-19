@@ -112,12 +112,11 @@ MANAGERS = ADMINS
 # Uses django-environ to accept uri format
 # See: https://django-environ.readthedocs.io/en/latest/#supported-types
 DATABASES = {
-    'default': {
+    "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "coinhub",
+        "NAME": "ch",
         "HOST": "localhost",
         "PORT": "5432",
-        "PASSWORD": "test1234",
     }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
