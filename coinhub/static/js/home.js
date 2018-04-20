@@ -139,6 +139,12 @@ $(document).ready(function () {
     body.appendChild(tbl);
 });
 
+//Create sortable table columns
+$(function () {
+    $('#coins').tablesorter();
+});
+
+
 /*
     This function add the ability to click each row in the table
     and have a modal appear. It also allows the user to close the modal

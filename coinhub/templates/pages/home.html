@@ -52,35 +52,24 @@
 				    			</td>
 				    		</tr>
 					    	<tr id="modal-split-row">
-					    		<td class="modal-table-cell" rowspan="2" valign="top">
+					    		<td class="modal-table-cell" rowspan="4" valign="top">
 					    			<table id="modal-coin-data">
 										<thead>
 											<tr>
 												<th></th>
-												<th class="table-header" align="center"> Price Change </th>
-												<th class="table-header" aign="center"> Volume Change </th>
+												<th class="table-header" align="center">Buy Price</th>
+												<th class="table-header" align="center">Buy Exchange</th>
+												<th class="table-header" aign="center">Sell Price</th>
+												<th class="table-header" align="center">Sell Exchange</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td class="row-header" id="coin-data-1h">1h</td>
-												<td align="center" id="price_change_1"></td>
-												<td align="center" id="volume_change_1"></td>
-											</tr>
-											<tr>
-												<td class="row-header" id="coin-data-6h">6h</td>
-												<td align="center" id="price_change_6"></td>
-												<td align="center" id="volume_change_6"></td>
-											</tr>
-											<tr>
-												<td class="row-header" id="coin-data-12h">12h</td>
-												<td align="center" id="price_change_12"></td>
-												<td align="center" id="volume_change_12"></td>
-											</tr>
-											<tr>
-												<td class="row-header" id="coin-data-24h">24h</td>
-												<td align="center" id="price_change_24"></td>
-												<td align="center" id="volume_change_24"></td>
+												<td class="row-header" id="coin-data"></td>
+												<td align="center" id="buy_price"></td>
+												<td align="center" id="buy_ex"></td>
+												<td align="center" id="sell_price"></td>
+												<td align="center" id="sell_ex"></td>
 											</tr>
 										</tbody>
 					    			</table>
@@ -130,6 +119,8 @@
 	<script>
 		var coin_table = "{{ coins | safe | escapejs }}";
 		var historical_table = "{{ historical | safe | escapejs }}";
+		var buy_sell = "{{ exchange_data | safe | escapejs }}";
+		var value_change = "{{ value_change | safe | escapejs }}";
 	</script>
 
 {% endblock javascript %}
