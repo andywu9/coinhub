@@ -16,6 +16,10 @@ class CoinDataPuller():
     def collect_new_data(self):
         return_data = requests.get(self.exchange_url)
         self.exchange_data = json.loads(return_data.text)
+        for item in self.exchange_data:
+            for key in item:
+                if item[key] is None:
+                    item[key] = "0"
 
     # store the data from coin market cap in two tables
     def save_all(self):
