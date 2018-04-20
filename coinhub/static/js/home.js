@@ -51,6 +51,13 @@ $(document).ready(function () {
     //Create header cells
     for (i = 0; i < header_titles.length; i += 1) {
         th = document.createElement('th');
+
+        //Ignore table sorting for graph, buy, and sell columns
+        if (header_titles[i] === 'Price History' || header_titles[i] === '') {
+            th.setAttribute('data-sorter', false);
+            th.classList.add('no-sorter');
+        }
+
         th.appendChild(document.createTextNode(header_titles[i]));
         trh.appendChild(th);
     }

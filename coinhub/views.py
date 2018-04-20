@@ -28,8 +28,6 @@ def home(request):
     for ex in exchange:
         exchange_data[ex["name"][:3]] = [ex["buy_price"], ex["buy_ex"], ex["sell_price"], ex["sell_ex"]]
 
-    print(exchange_data)
-
 
     graph_data = {}
     for row in historical_data:

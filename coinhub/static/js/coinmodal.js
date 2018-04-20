@@ -149,6 +149,7 @@ var loadModalData = function (coin_name) {
   var values = JSON.parse(value_change);
   var exchange = JSON.parse(buy_sell);
   var symb = values[coin_name];
+
   var buy_price = exchange[symb][0];
   var sell_price = exchange[symb][2];
   var buy_ex = exchange[symb][1];
