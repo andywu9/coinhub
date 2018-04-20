@@ -17,7 +17,7 @@ $(document).ready(function () {
         tbdy = document.createElement('tbody'),
         thead = document.createElement('thead'),
         trh = document.createElement('tr'),
-        header_titles = ['Coin', 'Current Price', 'Market Cap', 'Volume (24h)', 'Price Change (24h)', 'Price History', 'Buy', 'Sell'],//, 'Favorite'],
+        header_titles = ['Coin', 'Current Price', 'Market Cap', 'Volume (24h)', 'Price Change (24h)', 'Price History', '', ''],//, 'Favorite'],
         body = document.getElementsByClassName('table-container')[0],
         tbl = document.createElement('table'),
         tr,
@@ -100,29 +100,33 @@ $(document).ready(function () {
             tr.appendChild(td);
         }
 
-        //Add canvas for graph
+        // Add canvas for graph
         td_graph = document.createElement('td');
         graph = document.createElement('canvas');
         graph.classList.add('graph');
         graph.setAttribute('width', '300');
         graph.setAttribute('height', '100');
 
-        //Create Graph for current coin
+        // Create Graph for current coin
         ctx = graph.getContext('2d');
         createMainTableGraph(coin_name, ctx);
 
-        //Add graph to cell and cell to row
+        // Add graph to cell and cell to row
         td_graph.appendChild(graph);
         tr.appendChild(td_graph);
 
         td_buy = document.createElement('td');
+        td_buy.classList.add('center-cell');
         buy_button = document.createElement('button');
+        buy_button.classList.add('btn');
         buy_button.innerHTML = 'BUY';
         td_buy.appendChild(buy_button);
         tr.appendChild(td_buy);
 
         td_sell = document.createElement('td');
+        td_sell.classList.add('center-cell');
         sell_button = document.createElement('button');
+        sell_button.classList.add('btn');
         sell_button.innerHTML = 'SELL';
         td_sell.appendChild(sell_button);
         tr.appendChild(td_sell);

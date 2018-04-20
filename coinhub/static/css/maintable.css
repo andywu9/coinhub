@@ -28,3 +28,7 @@ th {
 	float: left;
 	white-space: nowrap;
 }
+
+.center-cell {
+	vertical-align: middle!important;
+}
