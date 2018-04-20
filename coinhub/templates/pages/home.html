@@ -6,11 +6,14 @@
 
 	<link href="{% static 'css/modal.css' %}" rel="stylesheet">
 	<link href="{% static 'css/maintable.css' %}" rel="stylesheet">
+	<link href="{% static 'css/search.css' %}" rel="stylesheet">
 
 {% endblock %}
 
 {% block content %}
 	<div class="main-page-content">
+		<input type="text" id="table-search-bar" onkeyup="filterTable()" placeholder="Search for names..">
+
 		<div class="table-container"> 
 			
 		</div>

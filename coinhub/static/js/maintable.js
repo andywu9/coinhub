@@ -3,6 +3,36 @@
 /*global $, jQuery, Chart, historical_table */
 
 /**
+  * filterTable filters the main table by the given search criteria
+  *
+  * Inputs: (none)
+  * 
+  * Outputs: (none)
+  * 
+  **/
+var filterTable = function () {
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+
+    input = $("#table-search-bar").get(0);
+    filter = input.value.toUpperCase();
+    table = $("#coins").get(0);
+    tr = table.getElementsByTagName("tr");
+
+      // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i += 1) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+};
+
+/**
   * Creates and populates a chartjs graph for a given coin and places it
   * in the provided canvas's context.
   *
