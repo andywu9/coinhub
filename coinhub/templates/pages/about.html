@@ -1,1 +1,103 @@
 {% extends "base.html" %}
+{% load static i18n %}
+
+{% block css %}
+  {{block.super}}
+
+  <link href="{% static 'css/w3.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="w3-content w3-margin-top" style="max-width:1800px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  	<!-- Left Column -->
+	<div class="w3-half">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h1 class="w3-text-blue w3-padding-16"><i class="w3-margin-right"></i>Prophet</h1>
+        <div class="w3-container">
+         <p>Coinhub came to be as a project for Rensselaer Community of Open Source class at RPI. We decided to do a project around cryptocurrency since it was a hot
+             topic at the start of the semester. Our initial idea involved around making a website where users could log in, have access to their crypto, and
+             trade with the many different exchanges. This idea became a little above our heads when we were disccussing the privacy and issues of holding users
+             many different coins and money. We decided to continue forward with this idea, and handle the legal issues when we had more of the website fully build. This is where we stand currently.
+         </p>
+        </div>
+      </div>
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h1 class="w3-text-blue w3-padding-16"><i class="w3-margin-right"></i>Why Open Source</h1>
+            <div class="w3-container">
+               <p> We decided to create this project with the hopes that it would benefit investors of the cryptocurrency space
+                  We believe that the website should be open source to support the growing community of crytocurrency users. Open source software thrives in a tight community, and so it only makes sense for this project to be open source.
+               </p>
+                <p>More information on the code can be found in our GitHub page. <a class="w3-text-indigo" href="https://github.com/andywu9/Prophet">https://github.com/andywu9/Prophet</a> </p>
+            </div>
+      </div>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-half">
+
+      <div class="w3-container w3-card w3-white">
+        <h1 class="w3-text-blue w3-padding-16"><i class="w3-margin-right"></i>Team Members</h1>
+
+        <div class="w3-container">
+       	  <div class="w3-display-container">
+          <img src="https://raw.githubusercontent.com/andywu9/Prophet/master/AboutUsImage/Mike.JPG" style="width:50%" alt="Image of Mike">
+          </div>
+          <h3 class="w3-opacity"><b>Mike Adams</b></h3>
+          <h6 class="w3-text-black">Major: <span class="w3-text-blue">Computer Science</span></h6>
+          <h6 class="w3-text-black">Future Plans: <span class="w3-text-blue">Amazon</span></h6>
+          <p class="w3-text-black">Mike became interested in programming, while taking a computer science course, on a whim in high school. His main interests
+              involve back-end development and artificial intelligence. Outside of computer science he enjoys playing sports, buying expensive shoes, and
+              chilling with friends.
+          </p>
+          <hr>
+        </div>
+        <div class="w3-container">
+       	  <div class="w3-display-container">
+          <img src="https://raw.githubusercontent.com/andywu9/Prophet/master/AboutUsImage/Jeremy.jpg" style="width:50%" alt="Image of Jeremy">
+          </div>
+
+          <h3 class="w3-opacity"><b>Jeremy Torella</b></h3>
+          <h6 class="w3-text-black">Major: <span class="w3-text-blue">Computer Science</span></h6>
+          <h6 class="w3-text-black">Future Plans: <span class="w3-text-blue">Wayfair</span></h6>
+          <p class="w3-text-black">Jeremy began developing in his junior year of high school, in a prep course for an AP computer science class. In college
+              he continued his passion for computer science at RPI and worked for many companies like Cisco and the NYS Department of Labor. In his senior year,
+              he was hired by Wayfair to pursue a career in software development after graduation.
+          </p>
+          <hr>
+        </div>
+        <div class="w3-container">
+       	  <div class="w3-display-container">
+          <img src="https://raw.githubusercontent.com/andywu9/Prophet/master/AboutUsImage/Andy.jpg" style="width:50%" alt="Image of Andy">
+          </div>
+
+          <h3 class="w3-opacity"><b>Andy Wu</b></h3>
+          <h6 class="w3-text-black">Major: <span class="w3-text-blue">Computer Science</span></h6>
+          <h6 class="w3-text-black">Future Plans: <span class="w3-text-blue">Amazon</span></h6>
+          <p class="w3-text-black">Andy’s passion for computer science was ignited when he attempted to create a private server for a game he loved to play
+              in middle school. He is currently invested in cryptocurrency and enjoys playing soccer and volleyball in his spare time.
+          </p>
+          <hr>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+<p>
+</p>
+
+{% endblock %}
