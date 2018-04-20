@@ -12,7 +12,7 @@ def save_data(coin_type, update):
 def collect():
 
     exchanges = ccxt.exchanges
-    coin_types = ["ETH/BTC"] # add more currencies to config file
+    coin_types = ["XRP/ETH","XRP/BTC",'ETH/BTC','BTC/ETH'] # add more currencies to config file
 
     for coin_type in coin_types:
         buy_low_price = 99999999999.0
