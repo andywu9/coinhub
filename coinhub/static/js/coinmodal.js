@@ -145,18 +145,25 @@ var openHistory = function (evt, days_back) {
 
 
 var loadModalData = function (coin_name) {
-
   var values = JSON.parse(value_change);
   var exchange = JSON.parse(buy_sell);
   var symb = values[coin_name];
-  var buy_price = exchange[symb][0];
-  var sell_price = exchange[symb][2];
-  var buy_ex = exchange[symb][1];
-  var sell_ex = exchange[symb][3];
+  var buy_price = exchange[symb+"/ETH"][0];
+  var sell_price = exchange[symb+"/ETH"][2];
+  var buy_ex = exchange[symb+"/ETH"][1];
+  var sell_ex = exchange[symb+"/ETH"][3];
+  var buy_price_btc = exchange[symb+"/BTC"][0];
+  var sell_price_btc = exchange[symb+"/BTC"][2];
+  var buy_ex_btc = exchange[symb+"/BTC"][1];
+  var sell_ex_btc = exchange[symb+"/BTC"][3];
 
   $('#buy_price').get(0).innerText = buy_price;
   $('#buy_ex').get(0).innerText = buy_ex;
   $('#sell_price').get(0).innerText = sell_price;
   $('#sell_ex').get(0).innerText = sell_ex;
+  $('#buy_price_btc').get(0).innerText = buy_price_btc;
+  $('#buy_ex_btc').get(0).innerText = buy_ex_btc;
+  $('#sell_price_btc').get(0).innerText = sell_price_btc;
+  $('#sell_ex_btc').get(0).innerText = sell_ex_btc;
     
 };

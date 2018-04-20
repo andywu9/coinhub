@@ -26,7 +26,7 @@ def home(request):
     # store best buy/sell prices for display
     exchange_data = {}
     for ex in exchange:
-        exchange_data[ex["name"][:3]] = [ex["buy_price"], ex["buy_ex"], ex["sell_price"], ex["sell_ex"]]
+        exchange_data[ex["name"]] = [ex["buy_price"], ex["buy_ex"], ex["sell_price"], ex["sell_ex"]]
 
     print(exchange_data)
 
