@@ -14,7 +14,7 @@ def home(request):
     coins = json_serializer.serialize(
         models.CurrentCoinInfo.objects.all().order_by('rank'), ensure_ascii=True)
     historical_data = models.GraphData.objects.annotate(
-        idmod2=F('id') % 2).filter(idmod2=0).order_by('time_collected').values()
+        idmod2=F('id') % 4).filter(idmod2=0).order_by('time_collected').values()
     conversion = models.CurrentCoinInfo.objects.all().values()
     exchange = models.ExchangeInfo.objects.all().values()
 
