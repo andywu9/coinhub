@@ -21,8 +21,6 @@ var createMainTableGraph = function (coin_name, ctx) {
         point,
         chart;
 
-        console.log(historical_data);
-
     for (data in historical_data[coin_name]) {
         if (historical_data[coin_name].hasOwnProperty(data)) {
             point = {

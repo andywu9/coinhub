@@ -4,6 +4,7 @@
 {% block css %}
 	{{block.super}}
 
+	<link href="{% static 'css/modal.css' %}" rel="stylesheet">
 	<link href="{% static 'css/maintable.css' %}" rel="stylesheet">
 
 {% endblock %}
@@ -15,6 +16,103 @@
 		</div>
 	</div>
 
+	<div id="myModal" class="modal">
+
+	  <!-- Modal content -->
+		<div class="modal-content">
+		  	<table>
+		  		<tbody>
+		  			<tr>
+		  				<td>
+						  	<ul class="nav nav-tabs">
+							    <li class="active" id="data-tab-button"><a data-toggle="tab" href="#data">Data</a></li>
+							    <li><a data-toggle="tab" href="#info">Info</a></li>
+						    </ul>
+						</td>
+						<td>
+						    <div class="right-justify">
+								<span class="close">&times;</span>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		    <div class="tab-content">
+			  	<div id="data" class="tab-pane active">
+				    <table class="modal-table" id="popup-table">
+				    	<tbody>
+				    		<tr>
+				    		</tr>
+				    		<tr>
+				    			<td id="modal-title" colspan="2">
+				    				<h3 class="modal-header" id="modal-title-text"></h3>
+				    			</td>
+				    		</tr>
+					    	<tr id="modal-split-row">
+					    		<td class="modal-table-cell" rowspan="2" valign="top">
+					    			<table id="modal-coin-data">
+										<thead>
+											<tr>
+												<th></th>
+												<th class="table-header" align="center"> Price Change </th>
+												<th class="table-header" aign="center"> Volume Change </th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td class="row-header" id="coin-data-1h">1h</td>
+												<td align="center" id="price_change_1"></td>
+												<td align="center" id="volume_change_1"></td>
+											</tr>
+											<tr>
+												<td class="row-header" id="coin-data-6h">6h</td>
+												<td align="center" id="price_change_6"></td>
+												<td align="center" id="volume_change_6"></td>
+											</tr>
+											<tr>
+												<td class="row-header" id="coin-data-12h">12h</td>
+												<td align="center" id="price_change_12"></td>
+												<td align="center" id="volume_change_12"></td>
+											</tr>
+											<tr>
+												<td class="row-header" id="coin-data-24h">24h</td>
+												<td align="center" id="price_change_24"></td>
+												<td align="center" id="volume_change_24"></td>
+											</tr>
+										</tbody>
+					    			</table>
+					    		</td>
+					    		<td>
+					    			<div class="tab"  id="price-graph-tabs">
+										<button class="tablinks" onclick="openHistory(event, 1)">1d</button>
+										<button class="tablinks" onclick="openHistory(event, 3)">3d</button>
+										<button class="tablinks" onclick="openHistory(event, 7)">1w</button>
+										<button class="tablinks" id="defaultOpen" onclick="openHistory(event, 30)">1m</button>
+										<button class="tablinks" onclick="openHistory(event, 90)">3m</button>
+										<button class="tablinks" onclick="openHistory(event, 180)">6m</button>
+										<button class="tablinks" onclick="openHistory(event, 365)">1y</button>
+									</div>
+									<div id="modal-graph-cell">
+							    		<canvas class="modal-canvas" id="popup-canvas"></canvas>
+									</div>
+					    		</td>
+					    	</tr>
+					    	<tr>
+					    		
+					    	</tr>
+				    	</tbody>
+				    </table>
+				</div>
+				<div id="info" class="tab-pane">
+					<div id="coin-desc">
+						<h3>Coin Information</h3>
+						<p id="coin-desc-text"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
 {% endblock content %}
 
@@ -22,6 +120,7 @@
 {% block javascript %}
 	{{block.super}}
 	
+	<script src="{% static 'js/coinmodal.js' %}"></script>
 	<script src="{% static 'js/moneyformat.js' %}"></script>
 	<script src="{% static 'js/maintable.js' %}"></script>
 	<script src="{% static 'js/home.js' %}"></script>

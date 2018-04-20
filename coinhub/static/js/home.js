@@ -47,6 +47,7 @@ $(document).ready(function () {
     //Create header row
     trh.setAttribute('id', 'header-row');
 
+
     //Create header cells
     for (i = 0; i < header_titles.length; i += 1) {
         th = document.createElement('th');
@@ -65,6 +66,7 @@ $(document).ready(function () {
         coin_name = coin_data[i][data_type[0]];
 
         tr.setAttribute('id', coin_name);
+        tr.classList.add('clickable-row');
 
         cell_div = document.createElement('div');
         cell_div.classList.add('nowrap');
@@ -131,4 +133,41 @@ $(document).ready(function () {
 
     tbl.appendChild(tbdy);
     body.appendChild(tbl);
+});
+
+/*
+    This function add the ability to click each row in the table
+    and have a modal appear. It also allows the user to close the modal
+    if they click the 'x' button or outside the modal window.
+
+*/
+$(function () {
+    var modal = $('#myModal');
+
+    // Add 'clickability' to all rows in the table
+    $('.clickable-row').click(function () {
+        var coin_name = this.id;
+        modal.get(0).setAttribute('coin', coin_name);
+        modal.css('display', 'block');
+        $('#defaultOpen').get(0).click();
+        resetCanvas(modal);
+        loadModalData(coin_name);
+        loadGraph(coin_name, modal);
+    });
+
+    // Close modal if 'x' clicked
+    $('.close').click(function () {
+        modal.css('display', 'none');
+        resetCanvas(modal);
+        $('#data-tab-button').click();
+    });
+
+    // Close modal if outside modal clicked
+    $(window).click(function (event) {
+        if (event.target.id === modal.attr('id')) {
+            modal.css('display', 'none');
+            resetCanvas(modal);
+            $('#data-tab-button').click();
+        }
+    });
 });
