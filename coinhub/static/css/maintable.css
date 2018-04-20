@@ -3,7 +3,7 @@
 }
 
 #header-row {
-    background-color: #6da5ff!important;
+    background-color: #ffaf5d!important;
 }
 
 .table-bordered td, .table-bordered th {
@@ -32,4 +32,12 @@ th {
 
 .center-cell {
 	vertical-align: middle!important;
+}
+
+.positive {
+	color: green;
+}
+
+.negative {
+	color: red;
 }

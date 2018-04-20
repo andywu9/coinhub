@@ -67,7 +67,7 @@ $(document).ready(function () {
     tbl.appendChild(thead);
 
     //Create each coin's row
-    for (i = 0; i < 20; i += 1) {
+    for (i = 0; i < 5; i += 1) {
         tr = document.createElement('tr');
         td = document.createElement('td');
         coin_name = coin_data[i][data_type[0]];
@@ -100,8 +100,17 @@ $(document).ready(function () {
                 break;
             }
             cell_div = document.createElement('div');
-            cell_div.classList.add('nowrap');
+            cell_div.classList.add('nowrap'); 
             cell_div.appendChild(document.createTextNode(data));
+
+            if (data_type[j] === 'price_change_day') {
+                if (data[0].charAt(0) === '-') {
+                    cell_div.classList.add('negative');
+                }
+                else {
+                    cell_div.classList.add('positive');
+                }
+            }
 
             td.appendChild(cell_div);
             tr.appendChild(td);

@@ -73,7 +73,7 @@ var createMainTableGraph = function (coin_name, ctx) {
             datasets: [{
                 radius: 0,
                 fill: false,
-                borderColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(115, 176, 196)',
                 data: graph_data,
             }]
         },
