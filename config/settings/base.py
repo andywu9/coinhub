@@ -114,9 +114,10 @@ MANAGERS = ADMINS
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "ch",
+        "NAME": "coinhub",
         "HOST": "localhost",
         "PORT": "5432",
+        "PASSWORD": "test1234"
     }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True

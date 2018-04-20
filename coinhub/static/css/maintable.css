@@ -1,0 +1,30 @@
+.table {
+	margin-top: 3%;
+}
+
+#header-row {
+    background-color: #6da5ff!important;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid black!important;
+}
+
+.favstar {
+	height: 2%;
+}
+
+.favcell {
+	text-align: center;
+	vertical-align: center;
+}
+
+th {
+	text-align: left;
+  vertical-align: middle !important;
+}
+
+.nowrap {
+	float: left;
+	white-space: nowrap;
+}
