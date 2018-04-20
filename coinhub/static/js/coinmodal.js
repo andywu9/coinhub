@@ -143,15 +143,20 @@ var openHistory = function (evt, days_back) {
     evt.currentTarget.className += " active";
 };
 
-/**
-  * loadModalData loads price change and volume change data into the modal.
-  *         The data is separated into 1, 6, 12, and 24 hour points.
-  *
-  * Input:
-  *     coin_name - the name of the coin to load the data for
-  *
-  * Output: (none)
-  **/
+
 var loadModalData = function (coin_name) {
+
+  var values = JSON.parse(value_change);
+  var exchange = JSON.parse(buy_sell);
+  var symb = values[coin_name];
+  var buy_price = exchange[symb][0];
+  var sell_price = exchange[symb][2];
+  var buy_ex = exchange[symb][1];
+  var sell_ex = exchange[symb][3];
+
+  $('#buy_price').get(0).innerText = buy_price;
+  $('#buy_ex').get(0).innerText = buy_ex;
+  $('#sell_price').get(0).innerText = sell_price;
+  $('#sell_ex').get(0).innerText = sell_ex;
     
 };

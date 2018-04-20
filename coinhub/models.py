@@ -6,7 +6,7 @@ import datetime
 
 # Hold the main page table data for quick overview of market
 class CurrentCoinInfo(models.Model):
-    circulating_supply = models.DecimalField(max_digits=19,
+    circulating_supply = models.DecimalField(max_digits=20,
                                              decimal_places=2, default=0)
     market_cap = models.DecimalField(max_digits=19,
                                      decimal_places=2, default=0)
@@ -40,7 +40,7 @@ class GraphData(models.Model):
     market_cap = models.DecimalField(max_digits=19, decimal_places=2,
                                      default=0)
     name = models.CharField(max_length=30, default="")
-    time_collected = models.DateTimeField(default=datetime.datetime.now(),
+    time_collected = models.DateTimeField(default=datetime.datetime(2018, 4, 20, 2, 22, 6, 486089),
                                           blank=True)
     volume = models.DecimalField(max_digits=19, decimal_places=2,
                                  default=0)
