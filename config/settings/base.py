@@ -117,11 +117,12 @@ DATABASES = {
         "NAME": "coinhub",
         "HOST": "localhost",
         "PORT": "5432",
-        "PASSWORD": "test1234"
+        # "PASSWORD": "test1234"
     }
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
+import dj_database_url
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
