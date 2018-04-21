@@ -120,9 +120,10 @@ DATABASES = {
         # "PASSWORD": "test1234"
     }
 }
-DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 import dj_database_url
+
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # GENERAL CONFIGURATION
 # ------------------------------------------------------------------------------
